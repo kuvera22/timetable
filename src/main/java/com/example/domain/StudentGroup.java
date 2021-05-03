@@ -15,22 +15,15 @@ public class StudentGroup {
     private String name;
     private Integer numberOfStudents;
     @ManyToOne
-    private Department department;
-    @ManyToOne
     private Speciality speciality;
 
     public StudentGroup() {
     }
 
-    public StudentGroup(UUID id,
-                        String name,
-                        Integer numberOfStudents,
-                        Department department,
-                        Speciality speciality) {
+    public StudentGroup(UUID id, String name, Integer numberOfStudents, Speciality speciality) {
         this.id = id;
         this.name = name;
         this.numberOfStudents = numberOfStudents;
-        this.department = department;
         this.speciality = speciality;
     }
 
@@ -58,12 +51,12 @@ public class StudentGroup {
         this.numberOfStudents = numberOfStudents;
     }
 
-    public Department getDepartment() {
-        return department;
+    public Speciality getSpeciality() {
+        return speciality;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setSpeciality(Speciality speciality) {
+        this.speciality = speciality;
     }
 
     @Override
@@ -71,12 +64,11 @@ public class StudentGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StudentGroup that = (StudentGroup) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(numberOfStudents, that.numberOfStudents) && Objects.equals(department, that.department);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(numberOfStudents, that.numberOfStudents) && Objects.equals(speciality, that.speciality);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, numberOfStudents, department);
+        return Objects.hash(id, name, numberOfStudents, speciality);
     }
-
 }
