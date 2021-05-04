@@ -1,18 +1,20 @@
-package com.example.domain;
+package com.example.dto;
+
+import com.example.domain.SpecialityPlan;
 
 import java.util.UUID;
 
-public class SubjectQuality {
+public class SpecialityRq {
     private String name;
-    private Integer numberOfHours;
+    private SpecialityPlan specialityPlan;
     private UUID departmentUUID;
 
-    public SubjectQuality() {
+    public SpecialityRq() {
     }
 
-    public SubjectQuality(String name, Integer numberOfHours, UUID departmentUUID) {
+    public SpecialityRq(String name, SpecialityPlan specialityPlan, UUID departmentUUID) {
         this.name = name;
-        this.numberOfHours = numberOfHours;
+        this.specialityPlan = specialityPlan;
         this.departmentUUID = departmentUUID;
     }
 
@@ -24,12 +26,12 @@ public class SubjectQuality {
         this.name = name;
     }
 
-    public Integer getNumberOfHours() {
-        return numberOfHours;
+    public SpecialityPlan getSpecialityPlan() {
+        return specialityPlan;
     }
 
-    public void setNumberOfHours(Integer numberOfHours) {
-        this.numberOfHours = numberOfHours;
+    public void setSpecialityPlan(SpecialityPlan specialityPlan) {
+        this.specialityPlan = specialityPlan;
     }
 
     public UUID getDepartmentUUID() {

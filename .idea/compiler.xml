@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eptaPlaner" />
+        <module name="timetable" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eptaPlaner" options="-parameters" />
+      <module name="timetable" options="-parameters" />
     </option>
   </component>
 </project>

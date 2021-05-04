@@ -1,22 +1,19 @@
 package com.example.domain;
 
+import java.util.List;
+
 public class SpecialityPlan {
-    private SubjectQuality subjectQuality;
+    private List<SubjectQuality> subjectQuality;
     private Integer numOfYear;
 
     public SpecialityPlan() {
     }
 
-    public SpecialityPlan(SubjectQuality subjectQuality, Integer numOfYear) {
-        this.subjectQuality = subjectQuality;
-        this.numOfYear = numOfYear;
-    }
-
-    public SubjectQuality getSubjectQuality() {
+    public List<SubjectQuality> getSubjectQuality() {
         return subjectQuality;
     }
 
-    public void setSubjectQuality(SubjectQuality subjectQuality) {
+    public void setSubjectQuality(List<SubjectQuality> subjectQuality) {
         this.subjectQuality = subjectQuality;
     }
 
