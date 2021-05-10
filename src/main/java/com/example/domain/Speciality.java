@@ -20,17 +20,17 @@ public class Speciality {
     private String name;
     @Type(type = "jsonb")
     @Column(columnDefinition = "jsonb")
-    private SpecialityPlan specialityPlan;
+    private List<SpecialityPlan> specialityPlans;
     @ManyToOne
     private Department department;
 
     public Speciality() {
     }
 
-    public Speciality(UUID id, String name, SpecialityPlan specialityPlan, Department department) {
+    public Speciality(UUID id, String name, List<SpecialityPlan> specialityPlans, Department department) {
         this.id = id;
         this.name = name;
-        this.specialityPlan = specialityPlan;
+        this.specialityPlans = specialityPlans;
         this.department = department;
     }
 
@@ -50,12 +50,12 @@ public class Speciality {
         this.name = name;
     }
 
-    public SpecialityPlan getSpecialityPlan() {
-        return specialityPlan;
+    public List<SpecialityPlan> getSpecialityPlans() {
+        return specialityPlans;
     }
 
-    public void setSpecialityPlan(SpecialityPlan specialityPlan) {
-        this.specialityPlan = specialityPlan;
+    public void setSpecialityPlans(List<SpecialityPlan> specialityPlans) {
+        this.specialityPlans = specialityPlans;
     }
 
     public Department getDepartment() {
@@ -71,11 +71,11 @@ public class Speciality {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Speciality that = (Speciality) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(specialityPlan, that.specialityPlan) && Objects.equals(department, that.department);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(specialityPlans, that.specialityPlans) && Objects.equals(department, that.department);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, specialityPlan, department);
+        return Objects.hash(id, name, specialityPlans, department);
     }
 }
