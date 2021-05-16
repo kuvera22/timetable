@@ -23,7 +23,8 @@ public class SpecialityService {
 
     public Speciality save(SpecialityRq specialityRq) {
         Department department = departmentRepository.findById(specialityRq.getDepartmentUUID()).orElseThrow(RuntimeException::new);
-        Speciality speciality = new Speciality(UUID.randomUUID(), specialityRq.getName(), specialityRq.getSpecialityPlan(), department);
-        return specialityRepository.save(speciality);
+        //Speciality speciality = new Speciality(UUID.randomUUID(), specialityRq.getName(), specialityRq.getSpecialityPlan(), department);
+        //return specialityRepository.save(speciality);
+        return null;
     }
 }

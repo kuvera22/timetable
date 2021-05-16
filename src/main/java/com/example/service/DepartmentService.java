@@ -18,7 +18,6 @@ public class DepartmentService {
     }
 
     public Department save(Department department) {
-        department.setId(UUID.randomUUID());
         return departmentRepository.save(department);
     }
 }

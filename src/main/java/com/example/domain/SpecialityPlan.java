@@ -9,6 +9,11 @@ public class SpecialityPlan {
     public SpecialityPlan() {
     }
 
+    public SpecialityPlan(List<SubjectQuality> subjectQuality, Integer numOfYear) {
+        this.subjectQuality = subjectQuality;
+        this.numOfYear = numOfYear;
+    }
+
     public List<SubjectQuality> getSubjectQuality() {
         return subjectQuality;
     }

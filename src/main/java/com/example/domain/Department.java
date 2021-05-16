@@ -1,19 +1,27 @@
 package com.example.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
+
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
 @Table(name = "department")
 @Entity
+@TypeDefs({
+        @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+})
 public class Department {
     @Id
     private UUID id;
     private String name;
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private List<DepartmentSubjects> departmentSubjects;
 
     public Department() {
     }
